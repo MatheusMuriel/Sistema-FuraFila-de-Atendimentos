@@ -1,0 +1,27 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+
+<VBox fx:controller="furafila.controllers.PainelChamadasController" xmlns:fx="http://javafx.com/fxml"
+      alignment="center">
+    <MenuBar>
+        <Menu text="Arquivo">
+            <MenuItem text="Abrir"/>
+            <MenuItem text="Salvar"/>
+        </Menu>
+        <Menu text="Janela">
+            <MenuItem text="Mostrar controle de senhas"/>
+            <MenuItem text="Mostrar controle do operador"/>
+        </Menu>
+    </MenuBar>
+
+    <Label fx:id="dataHora" text="dd/mm/aaaa hh:mm"/>
+    <HBox>
+        <Label fx:id="senhaChamada" text="----"/>
+        <ListView fx:id="proximasSenhas"/>
+    </HBox>
+</VBox>
