@@ -21,7 +21,10 @@ public class FilaSimples<E> implements Fila<E> {
     }
 
     @Override
-    public E desenfileirar() { throw new RuntimeException("O aluno ainda não implementou este método."); }
+    public E desenfileirar() {
+        throw new RuntimeException("O aluno ainda não implementou este método.");
+
+    }
 
     @Override
     public E proximo() {
@@ -30,17 +33,30 @@ public class FilaSimples<E> implements Fila<E> {
 
     @Override
     public int size() {
-        throw new RuntimeException("O aluno ainda não implementou este método.");
+        //throw new RuntimeException("O aluno ainda não implementou este método.");
+        return fila.size();
     }
 
     @Override
     public boolean isEmpty() {
-        throw new RuntimeException("O aluno ainda não implementou este método.");
+        //throw new RuntimeException("O aluno ainda não implementou este método.");
+        if(this.size() <= 0 ){
+            return false;
+        }else{return true;}
     }
 
+    /**
+     * Metodo que verifica se um Objeto "o" está na lista
+     * @param o
+     * @return
+     */
     @Override
     public boolean contains(Object o) {
-        throw new RuntimeException("O aluno ainda não implementou este método.");
+        //throw new RuntimeException("O aluno ainda não implementou este método.");
+        for(int i=0; i < this.size(); i++){
+            if(fila.get(i).equals(o)){return true;}
+        }
+        return false;
     }
 
     @Override
@@ -58,8 +74,22 @@ public class FilaSimples<E> implements Fila<E> {
         throw new RuntimeException("O aluno ainda não implementou este método.");
     }
 
+    /**
+     * Metodo que adiciona um elemento no final da lista retornando um true
+     * Caso aconteça um erro o metodo retorna false
+     * @param e Objeto a ser adicionado
+     * @return True: Se for adicionado com sucesso / False: Se ocorrer um erro
+     */
     @Override
-    public boolean add(E e) { throw new RuntimeException("O aluno ainda não implementou este método."); }
+    public boolean add(E e) {
+        //throw new RuntimeException("O aluno ainda não implementou este método.");
+        try{
+            fila.add(e);
+            return true;
+        }catch(Exception exp){
+            return false;
+        }
+    }
 
     @Override
     public boolean containsAll(Collection<?> c) {
