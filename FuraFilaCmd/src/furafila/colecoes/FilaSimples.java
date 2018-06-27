@@ -3,6 +3,7 @@ package furafila.colecoes;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Consumer;
 
 public class FilaSimples<E> implements Fila<E> {
 
@@ -51,7 +52,7 @@ public class FilaSimples<E> implements Fila<E> {
      * @return
      */
     @Override
-    public boolean contains(Object o) {
+    public boolean contains(Object o) {                                                                                    /////Transformar em recursivo
         //throw new RuntimeException("O aluno ainda não implementou este método.");
         for(int i=0; i < this.size(); i++){
             if(fila.get(i).equals(o)){return true;}
@@ -67,6 +68,7 @@ public class FilaSimples<E> implements Fila<E> {
     @Override
     public Object[] toArray() {
         throw new RuntimeException("O aluno ainda não implementou este método.");
+
     }
 
     @Override
@@ -82,11 +84,10 @@ public class FilaSimples<E> implements Fila<E> {
      */
     @Override
     public boolean add(E e) {
-        //throw new RuntimeException("O aluno ainda não implementou este método.");
         try{
             fila.add(e);
             return true;
-        }catch(Exception exp){
+        } catch(Exception error){
             return false;
         }
     }
@@ -98,7 +99,8 @@ public class FilaSimples<E> implements Fila<E> {
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        throw new RuntimeException("O aluno ainda não implementou este método.");
+
+        return false;
     }
 
     @Override
